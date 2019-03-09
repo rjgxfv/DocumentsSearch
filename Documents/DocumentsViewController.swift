@@ -10,10 +10,11 @@ import UIKit
 import CoreData
 
 
-class DocumentsViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+class DocumentsViewController: UIViewController , UITableViewDataSource, UITableViewDelegate,UISearchBarDelegate, UISearchDisplayDelegate{
     var documents2 = [Doc]()
     let dateFormatter = DateFormatter()
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var documentsTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,5 +95,25 @@ class DocumentsViewController: UIViewController , UITableViewDataSource, UITable
         }
         documentsTableView.reloadData()
         
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+//        if searchText != ""
+//        {
+//            var predicate: NSPredicate = NSPredicate()
+//            predicate = NSPredicate(format: "title contains[c] '\(searchText)'")
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            let context = appDelegate.persistentContainer.viewContext
+//            let fetchRequest = NSFetchRequest<Doc>(entityName: "title")
+//            fetchRequest.predicate = predicate
+//            do{
+//                documents2 = try context.fetch(fetchRequest)
+//            }
+//            catch{
+//                print("could not get serach data")
+//            }
+//            documentsTableView.reloadData()
+//        }
     }
 }

@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oHs-3O-Ipc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="documentCell" rowHeight="75" id="W5m-h4-Ynr" customClass="DocumentsTableViewCell" customModule="Documents" customModuleProvider="target">
@@ -89,13 +89,23 @@
                                     <outlet property="delegate" destination="pPI-2B-LxY" id="ySw-xd-zeO"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Qlj-Ib-jc6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pPI-2B-LxY" id="cHN-pD-jqb"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JAS-99-s6B" firstAttribute="bottom" secondItem="oHs-3O-Ipc" secondAttribute="bottom" id="HLk-BF-qyF"/>
-                            <constraint firstItem="oHs-3O-Ipc" firstAttribute="top" secondItem="JAS-99-s6B" secondAttribute="top" id="Xgi-xr-kE9"/>
+                            <constraint firstItem="Qlj-Ib-jc6" firstAttribute="trailing" secondItem="JAS-99-s6B" secondAttribute="trailing" id="UCE-CH-WEP"/>
+                            <constraint firstItem="Qlj-Ib-jc6" firstAttribute="top" secondItem="JAS-99-s6B" secondAttribute="top" id="amY-Zk-wav"/>
+                            <constraint firstItem="Qlj-Ib-jc6" firstAttribute="leading" secondItem="JAS-99-s6B" secondAttribute="leading" id="hpF-RL-MSK"/>
                             <constraint firstItem="JAS-99-s6B" firstAttribute="trailing" secondItem="oHs-3O-Ipc" secondAttribute="trailing" id="nEu-Jj-KBz"/>
                             <constraint firstItem="oHs-3O-Ipc" firstAttribute="leading" secondItem="JAS-99-s6B" secondAttribute="leading" id="xdB-kp-wxA"/>
+                            <constraint firstItem="oHs-3O-Ipc" firstAttribute="top" secondItem="Qlj-Ib-jc6" secondAttribute="bottom" id="yvO-5B-xJd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JAS-99-s6B"/>
                     </view>
@@ -108,11 +118,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="documentsTableView" destination="oHs-3O-Ipc" id="yci-FC-XO8"/>
+                        <outlet property="searchBar" destination="Qlj-Ib-jc6" id="By9-Qg-YvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HT1-HS-FLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="122"/>
+            <point key="canvasLocation" x="1776.8" y="121.88905547226388"/>
         </scene>
         <!--Title-->
         <scene sceneID="zOo-s2-aFK">
